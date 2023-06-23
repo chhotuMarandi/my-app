@@ -1,25 +1,12 @@
-import './App.css';
+import Video from './components/Video'
 
-let firstName = 'chhotu';
-let className = 'App-header';
-
-function App() {
-  console.log('App');
-  return (
-    <div className='App'>
-      <div className={className}>{firstName}</div>
-      <Demo />
-    </div>
-  );
-}
-
-function Demo() {
-  console.log('Demo');
-  return (
-    <div className='App'>
-      <div className='App-header'>Demo</div>
-    </div>
-  );
+function App() { 
+ return (
+  <div>
+    <h1>Hello</h1>
+    <Video></Video>
+  </div>
+ )
 }
 
 export default App;
