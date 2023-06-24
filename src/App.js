@@ -4,7 +4,12 @@ function App() {
  return (
   <div>
     <h1>Hello</h1>
-    <Video></Video>
+    <Video  
+      title='React js tutorial' 
+      channel='Coding addict'
+      views='128k'
+      time='8 month ago'
+    />
   </div>
  )
 }

@@ -1,16 +1,20 @@
 import './Video.css'
 
-function Video () {
- let topic = 'English'
- let bg = 'dark'
+function Video ({title, channel, views, time}) {
+
+// console.log(props)
+
   return (
     <>
-      <img
-        src='https://picsum.photos/640/360'
-        alt=''
-        width={400}
-      />
-      <p className={bg}>{topic} Music Video || 2023</p>
+      <div className='thumbnail'>
+        <img src='https://picsum.photos/640/360' alt='' width={400} />
+      </div>
+
+      <p className='title'>{title}</p>
+      <p className='channel'>{channel}</p>
+      <div className='discription'>
+        {views} views <span>•</span> {time}
+      </div>
     </>
   );
 }
