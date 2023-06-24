@@ -1,13 +1,17 @@
+import './Video.css'
+
 function Video () {
+ let topic = 'English'
+ let bg = 'dark'
   return (
-    <div>
+    <>
       <img
         src='https://picsum.photos/640/360'
         alt=''
         width={400}
       />
-      <p>English Music Video || 2023</p>
-    </div>
+      <p className={bg}>{topic} Music Video || 2023</p>
+    </>
   );
 }
 
