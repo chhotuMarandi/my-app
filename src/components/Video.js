@@ -1,21 +1,26 @@
 import './Video.css'
 
-function Video ({title, channel, views, time}) {
+function Video ({title, channel, views, time,image,verified}) {
 
-// console.log(props)
+  if (verified) {
+    verified = <p className='channel'>{channel} ✅</p>;
+  } else {
+    verified = <p className='channel'>{channel}</p>;
+  }
+
 
   return (
-    <>
+    <div className='video-card'>
       <div className='thumbnail'>
-        <img src='https://picsum.photos/640/360' alt='' width={400} />
+        <img src={image} alt='' width={400} />
       </div>
 
       <p className='title'>{title}</p>
-      <p className='channel'>{channel}</p>
+      {verified}
       <div className='discription'>
         {views} views <span>•</span> {time}
       </div>
-    </>
+    </div>
   );
 }
 
