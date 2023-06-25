@@ -2,12 +2,6 @@ import './Video.css'
 
 function Video ({title, channel, views, time,image,verified}) {
 
-  if (verified) {
-    verified = <p className='channel'>{channel} ✅</p>;
-  } else {
-    verified = <p className='channel'>{channel}</p>;
-  }
-
 
   return (
     <div className='video-card'>
@@ -16,7 +10,7 @@ function Video ({title, channel, views, time,image,verified}) {
       </div>
 
       <p className='title'>{title}</p>
-      {verified}
+      <p className='channel'>{channel} {verified ? '✅' : null}</p>;
       <div className='discription'>
         {views} views <span>•</span> {time}
       </div>

@@ -9,7 +9,7 @@ function App() {
       views:'128k',
       time:'8 month ago',
       image: 'https://repository-images.githubusercontent.com/37153337/9d0a6780-394a-11eb-9fd1-6296a684b124',
-      verified: 'true'
+      verified: true
   }
 
  return (
