@@ -10,7 +10,7 @@ function Video ({title, channel, views, time,image,verified}) {
       </div>
 
       <p className='title'>{title}</p>
-      <p className='channel'>{channel} {verified ? '✅' : null}</p>;
+      <p className='channel'>{channel} {verified && '✅'}</p>
       <div className='discription'>
         {views} views <span>•</span> {time}
       </div>
