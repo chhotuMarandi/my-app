@@ -8,11 +8,10 @@ function App() {
 
  return (
    <div className='App'>
-     {
-      videos.map((video)=>{
+     {videos.map((video) => {
        return (
          <Video
-          key={video.key}
+           key={video.key}
            title={video.title}
            channel={video.channel}
            views={video.views}
@@ -20,14 +19,17 @@ function App() {
            image={video.image}
            verified={video.verified}
          />
-       )
-      })
-     }
+       );
+     })}
 
      <div>
-      <PlayButton />
+       <PlayButton
+         onPlay={() => console.log('play')}
+         onPause={() => console.log('pause')}
+       >
+         play
+       </PlayButton>
      </div>
-     
    </div>
  );
 }
