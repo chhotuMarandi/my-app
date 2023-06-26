@@ -1,4 +1,5 @@
 import './App.css'
+import PlayButton from './components/PlayButton';
 import Video from './components/Video'
 import videos from './data/data'
 
@@ -22,6 +23,10 @@ function App() {
        )
       })
      }
+
+     <div>
+      <PlayButton />
+     </div>
      
    </div>
  );
