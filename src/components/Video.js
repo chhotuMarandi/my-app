@@ -1,4 +1,5 @@
 import './Video.css'
+import PlayButton from './PlayButton';
 
 function Video ({title, channel, views, time,image,verified}) {
 
@@ -17,6 +18,7 @@ function Video ({title, channel, views, time,image,verified}) {
         <div className='discription'>
           {views} views <span>•</span> {time}
         </div>
+      <PlayButton onPlay={()=>console.log('playing')} onPause={()=>console.log('paused')}/>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import './PlayButton.css'
 
-function PlayButton({ children, onPlay, onPause }) {
+function PlayButton({ onPlay, onPause }) {
  let isPlaying = false;
   function eventHandler() {
 
@@ -15,7 +15,7 @@ function PlayButton({ children, onPlay, onPause }) {
 
   return (
     <div className='playBtn'>
-      <button onClick={eventHandler}>{children}</button>
+      <button onClick={eventHandler}>play</button>
     </div>
   );
 }

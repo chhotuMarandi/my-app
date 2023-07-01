@@ -23,12 +23,11 @@ function App() {
      })}
 
      <div>
-       <PlayButton
+       {/* <PlayButton
          onPlay={() => console.log('play')}
          onPause={() => console.log('pause')}
-       >
-         play
-       </PlayButton>
+       /> */}
+
      </div>
    </div>
  );
