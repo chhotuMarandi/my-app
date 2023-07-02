@@ -2,6 +2,7 @@ import './App.css'
 import PlayButton from './components/PlayButton';
 import Video from './components/Video'
 import videos from './data/data'
+import Counter from './components/Counter';
 
 function App() { 
 
@@ -18,15 +19,19 @@ function App() {
            time={video.time}
            image={video.image}
            verified={video.verified}
-         />
+         >
+           <PlayButton
+             onPlay={() => console.log('playing', video.title)}
+             onPause={() => console.log('paused', video.title)}
+           >
+             {video.title}
+           </PlayButton>
+         </Video>
        );
      })}
 
      <div>
-       {/* <PlayButton
-         onPlay={() => console.log('play')}
-         onPause={() => console.log('pause')}
-       /> */}
+     <Counter/>
 
      </div>
    </div>
