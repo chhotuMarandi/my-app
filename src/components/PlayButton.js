@@ -20,6 +20,7 @@ function PlayButton({ onPlay, onPause,children }) {
       <button onClick={eventHandler}>
         {children} : {isPlaying ? '▶️' : '⏸️'}
       </button>
+      
     </div>
   );
 }
