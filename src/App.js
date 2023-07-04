@@ -4,31 +4,24 @@ import Video from './components/Video'
 import videosData from './data/data'
 import Counter from './components/Counter';
 import { useState } from 'react';
+import AddVideo from './components/AddVideo';
 
 function App() { 
 
   const [videos, setVideos] = useState(videosData);
 
-  function addVideo () {
-    setVideos( [
-        ...videos,
-        {
-          key: videos.length,
-          title: 'Javascript js tutorial',
-          channel: 'Codeforce',
-          views: '2M',
-          time: '2 year ago',
-          image:
-            'https://4.bp.blogspot.com/-s2EhTt57oeU/XHtQtO1QNLI/AAAAAAAANW8/KYkPQEZUyocSpA2RzqCcVt31imXPi63RACLcBGAs/s1600/Free%2BCourses%2Bto%2Blearn%2BJavaScript.jpg',
-          verified: true,
-        },
-      ])
+  function addVideos(video) {
+    setVideos([
+      ...videos,
+      {...video, key: video.length + 1}
+    ]);
   }
+
 
  return (
    <>
      <div>
-       <button onClick={addVideo}>Add Video</button>
+       <AddVideo addVideos={addVideos} />
      </div>
      <div className='App'>
        {videos.map((video) => {
@@ -51,10 +44,6 @@ function App() {
            </Video>
          );
        })}
-
-       <div>
-         <Counter />
-       </div>
      </div>
    </>
  );
