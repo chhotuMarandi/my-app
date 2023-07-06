@@ -16,7 +16,7 @@ function App(){
         />
 
         <div className='details'>
-          <p className='title'>React Js Tutorial and javascript</p>
+          <p className='title'>React Js Tutorial </p>
           <p className='channel'>Coder Dost</p>
           <div className="views-time">
             <p className='views'>6M views</p>
