@@ -35,3 +35,7 @@
 .views-time {
  display: flex;
 }
+
+.views-time p {
+ margin: 0 2px;
+}

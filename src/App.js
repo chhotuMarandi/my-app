@@ -20,7 +20,7 @@ function App(){
           <p className='channel'>Coder Dost</p>
           <div className="views-time">
             <p className='views'>6M views</p>
-            <p>•</p>
+            <p >•</p>
             <p className='time'>5 month ago</p>
           </div>
         </div>
