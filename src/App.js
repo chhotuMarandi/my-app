@@ -1,17 +1,29 @@
 import './App.css'
 import Video from './components/Video'
+import videoData from './data/videoData'
 
 
 function App(){
+
+  
+
   return (
-    <>
-      <Video 
-      title='Javascript js Tutorial'
-      channel='chhotu Coder'
-      views='1M'
-      time='1 year ago'
-      ></Video>
-    </>
+    <div className='App'>
+
+     {videoData.map((video)=>{
+         return (
+           <Video
+             title={video.title}
+             channel={video.channel}
+             views={video.views}
+             time={video.time}
+             thumbnailImg={video.thumbnailImg}
+             profileImg={video.profileImg}
+             key={video.id}
+           ></Video>
+         );
+     })}
+    </div>
   );
 }
 

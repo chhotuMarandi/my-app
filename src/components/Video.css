@@ -1,0 +1,41 @@
+.video-card {
+ overflow: hidden;
+ width: 400px;
+}
+
+.thumbnail {
+ width: 360px;
+ height: 205px;
+ object-fit: cover;
+ border-radius: 10px;
+}
+
+.details-section {
+ display: flex;
+ justify-content: space-between;
+ margin-top: 10px;
+ gap: 15px;
+}
+
+.details-section img {
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+}
+
+.details {
+ margin-right: auto;
+ display: inline;
+}
+
+.details p {
+ margin: 5px 0;
+}
+
+.views-time {
+ display: flex;
+}
+
+.views-time p {
+ margin: 0 2px;
+}
