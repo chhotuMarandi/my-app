@@ -1,31 +1,17 @@
 import './App.css'
+import Video from './components/Video'
+
 
 function App(){
   return (
-    <div className="video-card">
-      <img
-        src='https://loremflickr.com/320/240/random'
-        className='thumbnail'
-        alt=''
-      />
-      <section className='details-section'>
-        <img
-          src='https://loremflickr.com/40/40/people'
-          className='profile'
-          alt=''
-        />
-
-        <div className='details'>
-          <p className='title'>React Js Tutorial </p>
-          <p className='channel'>Coder Dost</p>
-          <div className="views-time">
-            <p className='views'>6M views</p>
-            <p >•</p>
-            <p className='time'>5 month ago</p>
-          </div>
-        </div>
-      </section>
-    </div>
+    <>
+      <Video 
+      title='Javascript js Tutorial'
+      channel='chhotu Coder'
+      views='1M'
+      time='1 year ago'
+      ></Video>
+    </>
   );
 }
 
