@@ -12,7 +12,7 @@ function Video({ title, channel, time, views, thumbnailImg, profileImg ,verified
 
           <div className='details'>
             <p className='title'>{title} </p>
-            <p className='channel'>{channel}{verified ? '✅': ''}</p>
+            <p className='channel'>{channel}{verified && '✅'}</p>
             <div className='views-time'>
               <p className='views'>{views}</p>
               <p>•</p>

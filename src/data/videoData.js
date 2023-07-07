@@ -7,7 +7,7 @@ const videoData = [
     time: '1 year ago',
     thumbnailImg: 'https://picsum.photos/300/150',
     profileImg: 'https://loremflickr.com/40/40/people',
-    verified : true
+    verified : false
   },
   {
     id: 2,
