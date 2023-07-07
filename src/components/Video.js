@@ -6,11 +6,15 @@ function Video({ title, channel, time, views,verified,id}) {
   return (
     <>
       <div className='video-card'>
-        <img
-          src={`https://picsum.photos/id/${id}/300/150`}
-          className='thumbnail'
-          alt=''
-        />
+        <div className='thumnail-img'>
+          <img
+            src={`https://picsum.photos/id/${id}/300/150`}
+            className='thumbnail'
+            alt=''
+          />
+          <div className='play'>play</div>
+        </div>
+
         <section className='details-section'>
           <img
             src={`https://picsum.photos/id/${id}/200/300?grayscale&blur=2`}
