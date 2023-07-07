@@ -1,18 +1,29 @@
 import './Video.css'
 
-function Video({ title, channel, time, views, thumbnailImg, profileImg ,verified}) {
+function Video({ title, channel, time, views,verified,id}) {
 
 
   return (
     <>
       <div className='video-card'>
-        <img src={thumbnailImg} className='thumbnail' alt='' />
+        <img
+          src={`https://picsum.photos/id/${id}/300/150`}
+          className='thumbnail'
+          alt=''
+        />
         <section className='details-section'>
-          <img src={profileImg} className='profile' alt='' />
+          <img
+            src={`https://picsum.photos/id/${id}/200/300?grayscale&blur=2`}
+            className='profile'
+            alt=''
+          />
 
           <div className='details'>
             <p className='title'>{title} </p>
-            <p className='channel'>{channel}{verified && '✅'}</p>
+            <p className='channel'>
+              {channel}
+              {verified && '✅'}
+            </p>
             <div className='views-time'>
               <p className='views'>{views}</p>
               <p>•</p>

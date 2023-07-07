@@ -5,8 +5,6 @@ const videoData = [
     channel: 'chhotu Coder',
     views: '1M',
     time: '1 year ago',
-    thumbnailImg: 'https://picsum.photos/300/150',
-    profileImg: 'https://loremflickr.com/40/40/people',
     verified : false
   },
   {
@@ -15,8 +13,6 @@ const videoData = [
     channel: 'Coding addict',
     views: '128k',
     time: '3 year ago',
-    thumbnailImg: 'https://picsum.photos/300/150',
-    profileImg: 'https://loremflickr.com/40/40/people',
     verified : true
   },
   {
@@ -25,8 +21,6 @@ const videoData = [
     channel: 'stackoverflow',
     views: '256k',
     time: '5 month ago',
-    thumbnailImg: 'https://picsum.photos/300/150',
-    profileImg: 'https://loremflickr.com/40/40/people',
     verified : true
   },
   {
@@ -35,8 +29,6 @@ const videoData = [
     channel: 'web dev',
     views: '56k',
     time: '6 month ago',
-    thumbnailImg: 'https://picsum.photos/300/150',
-    profileImg: 'https://loremflickr.com/40/40/people',
     verified : false
   },
 ];

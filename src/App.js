@@ -17,6 +17,7 @@ function App(){
              time={video.time}
              thumbnailImg={video.thumbnailImg}
              profileImg={video.profileImg}
+             id={video.id}
              key={video.id}
              verified={video.verified}
            ></Video>
