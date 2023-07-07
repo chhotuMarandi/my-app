@@ -1,6 +1,8 @@
 import './Video.css'
 
-function Video({ title, channel, time, views, thumbnailImg, profileImg }) {
+function Video({ title, channel, time, views, thumbnailImg, profileImg ,verified}) {
+
+
   return (
     <>
       <div className='video-card'>
@@ -10,7 +12,7 @@ function Video({ title, channel, time, views, thumbnailImg, profileImg }) {
 
           <div className='details'>
             <p className='title'>{title} </p>
-            <p className='channel'>{channel}</p>
+            <p className='channel'>{channel}{verified ? '✅': ''}</p>
             <div className='views-time'>
               <p className='views'>{views}</p>
               <p>•</p>

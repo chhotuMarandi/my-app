@@ -5,8 +5,6 @@ import videoData from './data/videoData'
 
 function App(){
 
-  
-
   return (
     <div className='App'>
 
@@ -20,6 +18,7 @@ function App(){
              thumbnailImg={video.thumbnailImg}
              profileImg={video.profileImg}
              key={video.id}
+             verified={video.verified}
            ></Video>
          );
      })}
