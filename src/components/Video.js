@@ -1,4 +1,5 @@
 import './Video.css'
+import PlayButton from './PlayButton';
 
 function Video({ title, channel, time, views,verified,id}) {
 
@@ -12,7 +13,7 @@ function Video({ title, channel, time, views,verified,id}) {
             className='thumbnail'
             alt=''
           />
-          <div className='play'>play</div>
+          <PlayButton />
         </div>
 
         <section className='details-section'>
