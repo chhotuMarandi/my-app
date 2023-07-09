@@ -1,14 +1,23 @@
-function PlayButton({name,message,children}) {
+function PlayButton({ children, onPause, onPlay }) {
+ let playing = false;
+  function clickHandler() {
 
-function clickHandler(){
-  console.log(message)
-}
+   if(playing){
+    onPause();
+   } else {
+     onPlay();
+   }
 
- return (
-   <>
-     <button onClick={clickHandler}>{children}</button>
-   </>
- );
+   playing = !playing
+   // console.log(playing)
+
+  }
+
+  return (
+    <>
+      <button onClick={clickHandler}>{children}</button>
+    </>
+  );
 }
 
 export default PlayButton
