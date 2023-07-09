@@ -1,16 +1,14 @@
-function PlayButton() {
+function PlayButton({name,message,children}) {
 
-    function clickHandler(){
-      console.log('playing')
-    }
-
-  return (
-    <>
-      <button onClick={clickHandler} className='play'>
-        play
-      </button>
-    </>
-  );
+function clickHandler(){
+  console.log(message)
 }
 
-export default PlayButton;
+ return (
+   <>
+     <button onClick={clickHandler}>{children}</button>
+   </>
+ );
+}
+
+export default PlayButton
