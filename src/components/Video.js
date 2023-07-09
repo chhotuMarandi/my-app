@@ -1,7 +1,7 @@
 import './Video.css'
 
 
-function Video({ title, channel, time, views,verified,id}) {
+function Video({ title, channel, time, views,verified,id,children}) {
 
 
   return (
@@ -13,6 +13,9 @@ function Video({ title, channel, time, views,verified,id}) {
             className='thumbnail'
             alt=''
           />
+          <div>
+            {children}
+          </div>
         </div>
 
         <section className='details-section'>

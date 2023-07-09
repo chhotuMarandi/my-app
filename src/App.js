@@ -20,16 +20,18 @@ function App(){
             id={video.id}
             key={video.id}
             verified={video.verified}
-          ></Video>
+          >
+            <PlayButton
+              onPlay={() => console.log('playing')}
+              onPause={() => console.log('paused')}
+              message='playing'
+            >
+              Play
+            </PlayButton>
+          </Video>
         );
       })}
-      <PlayButton
-        onPlay={() => console.log('playing')}
-        onPause={() => console.log('paused')}
-        message='playing'
-      >
-        Play
-      </PlayButton>
+      
     </div>
   );
 }

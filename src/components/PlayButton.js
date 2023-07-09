@@ -15,7 +15,7 @@ function PlayButton({ children, onPause, onPlay }) {
 
   return (
     <>
-      <button onClick={clickHandler}>{children}</button>
+      <button className="play" onClick={clickHandler}>{children}</button>
     </>
   );
 }
