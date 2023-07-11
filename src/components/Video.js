@@ -14,7 +14,7 @@ function Video({ title, channel, time, views,verified,id,children}) {
             alt=''
           />
           <div>
-            {children}
+            {children} 
           </div>
         </div>
 
