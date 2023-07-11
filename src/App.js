@@ -37,31 +37,37 @@ function App(){
 
 
   return (
-    <div className='App'>
-      {videoCard.map((video) => {
-        return (
-          <Video
-            title={video.title}
-            channel={video.channel}
-            views={video.views}
-            time={video.time}
-            thumbnailImg={video.thumbnailImg}
-            profileImg={video.profileImg}
-            id={video.id}
-            key={video.id}
-            verified={video.verified}
-          >
-            <PlayButton
-              onPlay={() => console.log('playing', video.title)}
-              onPause={() => console.log('paused', video.title)}
+    <>
+      <div className='input-field'>
+        <input type='text' placeholder='title' />
+        <input type='text' placeholder='views' />
+        <button onClick={addVideo}>Add Video</button>
+      </div>
+      <div className='App'>
+        {videoCard.map((video) => {
+          return (
+            <Video
+              title={video.title}
+              channel={video.channel}
+              views={video.views}
+              time={video.time}
+              thumbnailImg={video.thumbnailImg}
+              profileImg={video.profileImg}
+              id={video.id}
+              key={video.id}
+              verified={video.verified}
             >
-              {/* {video.title} */}
-            </PlayButton>
-          </Video>
-        );
-      })}
-      <button onClick={addVideo}>Add Video</button>
-    </div>
+              <PlayButton
+                onPlay={() => console.log('playing', video.title)}
+                onPause={() => console.log('paused', video.title)}
+              >
+                {/* {video.title} */}
+              </PlayButton>
+            </Video>
+          );
+        })}
+      </div>
+    </>
   );
 }
 

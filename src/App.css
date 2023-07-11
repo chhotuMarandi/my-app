@@ -2,3 +2,9 @@
  display: grid;
  grid-template-columns: repeat(4,1fr);
 }
+
+.input-field input,button{
+ display: block;
+ margin: 5px 0;
+ padding: 5px;
+}
