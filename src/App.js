@@ -3,45 +3,32 @@ import Video from './components/Video'
 import videoData from './data/videoData';
 import PlayButton from './components/PlayButton';
 import { useState } from 'react';
+import AddVideo from './components/AddVideo';
 
 
 function App(){
 
-
-
   const [videoCard, setVideoCard] = useState(videoData);
 
-  // const initialData = {
-  //   id: {id:videoCard.length + 1},
-  //   title: 'Node js Tutorial',
-  //   channel: 'Coding addict',
-  //   views: '128k',
-  //   time: '3 year ago',
-  //   verified: true,
-  // };
+
+  const initialData = {
+    id: videoCard.length + 1,
+    title: 'Node js Tutorial',
+    channel: 'Coding addict',
+    views: '128k',
+    time: '3 year ago',
+    verified: true,
+  };
 
   function addVideo(){
-    setVideoCard([
-      ...videoCard,
-      {
-        id: videoCard.length + 1 ,
-          title: 'Node js Tutorial',
-          channel: 'Coding addict',
-          views: '128k',
-          time: '3 year ago',
-          verified: true,
-      },
-    ]);
-    console.log(videoCard);
+    setVideoCard([...videoCard, initialData]);
   }
 
 
   return (
     <>
       <div className='input-field'>
-        <input type='text' placeholder='title' />
-        <input type='text' placeholder='views' />
-        <button onClick={addVideo}>Add Video</button>
+        <AddVideo />
       </div>
       <div className='App'>
         {videoCard.map((video) => {
