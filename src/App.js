@@ -11,24 +11,24 @@ function App(){
   const [videoCard, setVideoCard] = useState(videoData);
 
 
-  const initialData = {
-    id: videoCard.length + 1,
-    title: 'Node js Tutorial',
-    channel: 'Coding addict',
-    views: '128k',
-    time: '3 year ago',
-    verified: true,
-  };
+  // const initialData = {
+  //   id: videoCard.length + 1,
+  //   title: 'Node js Tutorial',
+  //   channel: 'Coding addict',
+  //   views: '128k',
+  //   time: '3 year ago',
+  //   verified: true,
+  // };
 
-  function addVideo(){
-    setVideoCard([...videoCard, initialData]);
+  function addVideos(video){
+    setVideoCard([...videoCard, { ...video, id: videoCard.length + 1 }]);
   }
 
 
   return (
     <>
       <div className='input-field'>
-        <AddVideo />
+        <AddVideo setVideos={addVideos} />
       </div>
       <div className='App'>
         {videoCard.map((video) => {
