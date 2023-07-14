@@ -1,7 +1,5 @@
 import './App.css'
-import Video from './components/Video'
 import videoData from './data/videoData';
-import PlayButton from './components/PlayButton';
 import { useState } from 'react';
 import AddVideo from './components/AddVideo';
 import VideoList from './components/VideoList';

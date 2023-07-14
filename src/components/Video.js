@@ -7,6 +7,7 @@ function Video({ title, channel, time, views,verified,id,children}) {
   return (
     <>
       <div className='video-card'>
+      <button className='close-btn'>X</button>
         <div className='thumnail-img'>
           <img
             src={`https://picsum.photos/id/${id}/300/150`}

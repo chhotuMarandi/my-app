@@ -54,3 +54,14 @@
 .views-time p {
  margin: 0 2px;
 }
+
+.video-card {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 4em;
+  z-index: 999;
+  cursor: pointer;
+}
