@@ -1,35 +1,42 @@
 import { useState } from "react";
 
-function AddVideo({ setVideos }) {
-  const [video, setVideo] = useState({
+function AddVideo({ addVideo }) {
+
+  const initialData = {
     channel: 'Coding addict',
     time: '3 year ago',
     verified: true,
-  });
+    title: '',
+    views: '',
+  };
+
+  const [video, setVideo] = useState(initialData);
 
   function inputField(e) {
-    console.log(e.target.name, e.target.value);
     setVideo({ ...video, [e.target.name]: e.target.value });
   }
 
   function onSubmit(e) {
     e.preventDefault();
-    setVideos(video);
+    addVideo(video);
+    setVideo(initialData);
   }
 
   return (
     <>
       <input
-        type='title'
+        type='text'
         onChange={inputField}
         name='title'
         placeholder='title'
+        value={video.title}
       />
       <input
-        type='view'
+        type='text'
         onChange={inputField}
-        name='view'
+        name='views'
         placeholder='views'
+        value={video.views}
       />
       <button onClick={onSubmit}>Add Video</button>
     </>
