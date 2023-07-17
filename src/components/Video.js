@@ -1,22 +1,29 @@
 import './Video.css'
 
 
-function Video({ title, channel, time, views,verified,id,children}) {
-
-
+function Video({
+  title,
+  channel,
+  time,
+  views,
+  verified,
+  id,
+  children,
+  deleteVideo,
+  editVideo
+}) {
   return (
     <>
       <div className='video-card'>
-      <button className='close-btn'>X</button>
+      <button className='edit' onClick={()=>editVideo(id)}>edit</button>
+        <button className='close-btn' onClick={()=>deleteVideo(id)}>X</button>
         <div className='thumnail-img'>
           <img
             src={`https://picsum.photos/id/${id}/300/150`}
             className='thumbnail'
             alt=''
           />
-          <div>
-            {children} 
-          </div>
+          <div>{children}</div>
         </div>
 
         <section className='details-section'>

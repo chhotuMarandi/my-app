@@ -59,9 +59,15 @@
   position: relative;
 }
 
-.close-btn {
+.close-btn{
   position: absolute;
   right: 4em;
   z-index: 999;
   cursor: pointer;
+}
+
+.edit {
+  position: absolute;
+  right: 7em;
+  z-index: 999;
 }

@@ -13,6 +13,13 @@ function App(){
     setVideoCard([...videoCard, { ...video, id: videoCard.length + 1 }]);
   }
 
+function deleteVideo(id){
+  setVideoCard(videoCard.filter((video) => video.id !== id));
+}
+
+function editVideo(id) {
+  console.log(videoCard.find(video=>video.id===id))
+}
 
   return (
     <>
@@ -20,7 +27,11 @@ function App(){
         <AddVideo addVideo={addVideos} />
       </div>
       <div className='App'>
-        <VideoList videos={videoCard} />
+        <VideoList
+          videos={videoCard}
+          deleteVideo={deleteVideo}
+          editVideo={editVideo}
+        />
       </div>
     </>
   );
