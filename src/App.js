@@ -9,6 +9,8 @@ function App(){
 
   const [videoCard, setVideoCard] = useState(videoData);
 
+  const [editableVideo,setEditableVideo] = useState(null)
+
   function addVideos(video){
     setVideoCard([...videoCard, { ...video, id: videoCard.length + 1 }]);
   }
@@ -18,13 +20,13 @@ function deleteVideo(id){
 }
 
 function editVideo(id) {
-  console.log(videoCard.find(video=>video.id===id))
+  setEditableVideo(videoCard.find((video) => video.id === id));
 }
 
   return (
     <>
       <div className='input-field'>
-        <AddVideo addVideo={addVideos} />
+        <AddVideo addVideo={addVideos} editVideos={editableVideo} />
       </div>
       <div className='App'>
         <VideoList

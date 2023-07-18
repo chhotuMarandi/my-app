@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function AddVideo({ addVideo }) {
-
+function AddVideo({ addVideo, editVideos }) {
   const initialData = {
     channel: 'Coding addict',
     time: '3 year ago',
@@ -21,6 +20,13 @@ function AddVideo({ addVideo }) {
     addVideo(video);
     setVideo(initialData);
   }
+
+  useEffect(() => {
+    if(editVideos){
+      setVideo(editVideos);
+
+    }
+  }, [editVideos]);
 
   return (
     <>
