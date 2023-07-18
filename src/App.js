@@ -23,10 +23,23 @@ function editVideo(id) {
   setEditableVideo(videoCard.find((video) => video.id === id));
 }
 
+function updateVideo(video){
+ const index = videoCard.findIndex((videoIndex) => videoIndex.id === video.id);
+
+ const newVideos = [...videoCard]
+ newVideos.splice(index, 1, video);
+ setVideoCard(newVideos);
+ console.log(newVideos)
+}
+
   return (
     <>
       <div className='input-field'>
-        <AddVideo addVideo={addVideos} editVideos={editableVideo} />
+        <AddVideo
+          addVideo={addVideos}
+          updateVideo={updateVideo}
+          editVideos={editableVideo}
+        />
       </div>
       <div className='App'>
         <VideoList

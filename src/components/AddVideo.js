@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function AddVideo({ addVideo, editVideos }) {
+function AddVideo({ addVideo, updateVideo, editVideos }) {
   const initialData = {
     channel: 'Coding addict',
     time: '3 year ago',
@@ -17,8 +17,12 @@ function AddVideo({ addVideo, editVideos }) {
 
   function onSubmit(e) {
     e.preventDefault();
-    addVideo(video);
-    setVideo(initialData);
+    if(editVideos) {
+       updateVideo(video);
+    } else {
+      addVideo(video);
+    }
+   
   }
 
   useEffect(() => {
@@ -44,7 +48,7 @@ function AddVideo({ addVideo, editVideos }) {
         placeholder='views'
         value={video.views}
       />
-      <button onClick={onSubmit}>Add Video</button>
+      <button onClick={onSubmit}>{editVideos ? 'Update' : 'Add'} Video</button>
     </>
   );
 }
