@@ -1,26 +1,39 @@
 import './App.css'
 import videoData from './data/videoData';
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import AddVideo from './components/AddVideo';
 import VideoList from './components/VideoList';
 
 
 function App(){
 
-  const [videoCard, setVideoCard] = useState(videoData);
+  function videoReducer(videoCard, action) {
+    switch (action.type){
+      case 'ADD':
+        return [...videoCard, { ...action.payload, id: videoCard.length + 1 }];
+      default: 
+      return videoCard
+    }
+  }
+
+  const [videoCard,dispatch] = useReducer(videoReducer, videoData);
+
+  // const [videoCard, setVideoCard] = useState(videoData);
 
   const [editableVideo,setEditableVideo] = useState(null)
 
   function addVideos(video){
-    setVideoCard([...videoCard, { ...video, id: videoCard.length + 1 }]);
+    dispatch({type: 'ADD', payload : video})
+    //action : {type : 'ADD', payload : video}
+    // setVideoCard([...videoCard, { ...video, id: videoCard.length + 1 }]);
   }
 
 function deleteVideo(id){
-  setVideoCard(videoCard.filter((video) => video.id !== id));
+  // setVideoCard(videoCard.filter((video) => video.id !== id));
 }
 
 function editVideo(id) {
-  setEditableVideo(videoCard.find((video) => video.id === id));
+  // setEditableVideo(videoCard.find((video) => video.id === id));
 }
 
 function updateVideo(video){
@@ -28,7 +41,7 @@ function updateVideo(video){
 
  const newVideos = [...videoCard]
  newVideos.splice(index, 1, video);
- setVideoCard(newVideos);
+//  setVideoCard(newVideos);
  console.log(newVideos)
 }
 
