@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function AddVideo({ addVideo, updateVideo, editVideos }) {
+function AddVideo({ dispatch, editVideos }) {
   const initialData = {
     channel: 'Coding addict',
     time: '3 year ago',
@@ -18,9 +18,9 @@ function AddVideo({ addVideo, updateVideo, editVideos }) {
   function onSubmit(e) {
     e.preventDefault();
     if(editVideos) {
-       updateVideo(video);
+      dispatch({ type: 'UPDATE', payload: video });
     } else {
-      addVideo(video);
+     dispatch({ type: 'ADD', payload: video });
     }
    
   }

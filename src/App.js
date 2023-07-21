@@ -7,10 +7,23 @@ import VideoList from './components/VideoList';
 
 function App(){
 
+  const [editableVideo, setEditableVideo] = useState(null);
+
   function videoReducer(videoCard, action) {
     switch (action.type){
       case 'ADD':
         return [...videoCard, { ...action.payload, id: videoCard.length + 1 }];
+
+      case 'DELETE' :
+        return videoCard.filter((video) => video.id !== action.payload);
+
+      case 'UPDATE' :
+         const index = videoCard.findIndex((videoIndex) => videoIndex.id === action.payload.id);
+        const newVideos = [...videoCard]
+        newVideos.splice(index, 1, action.payload);
+        setEditableVideo(null);
+        return newVideos
+
       default: 
       return videoCard
     }
@@ -20,44 +33,24 @@ function App(){
 
   // const [videoCard, setVideoCard] = useState(videoData);
 
-  const [editableVideo,setEditableVideo] = useState(null)
+  // const [editableVideo,setEditableVideo] = useState(null)
 
-  function addVideos(video){
-    dispatch({type: 'ADD', payload : video})
-    //action : {type : 'ADD', payload : video}
-    // setVideoCard([...videoCard, { ...video, id: videoCard.length + 1 }]);
-  }
 
-function deleteVideo(id){
-  // setVideoCard(videoCard.filter((video) => video.id !== id));
-}
 
 function editVideo(id) {
-  // setEditableVideo(videoCard.find((video) => video.id === id));
+  setEditableVideo(videoCard.find((video) => video.id === id));
 }
 
-function updateVideo(video){
- const index = videoCard.findIndex((videoIndex) => videoIndex.id === video.id);
-
- const newVideos = [...videoCard]
- newVideos.splice(index, 1, video);
-//  setVideoCard(newVideos);
- console.log(newVideos)
-}
 
   return (
     <>
       <div className='input-field'>
-        <AddVideo
-          addVideo={addVideos}
-          updateVideo={updateVideo}
-          editVideos={editableVideo}
-        />
+        <AddVideo dispatch={dispatch} editVideos={editableVideo} />
       </div>
       <div className='App'>
         <VideoList
           videos={videoCard}
-          deleteVideo={deleteVideo}
+          dispatch={dispatch}
           editVideo={editVideo}
         />
       </div>

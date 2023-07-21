@@ -9,14 +9,21 @@ function Video({
   verified,
   id,
   children,
-  deleteVideo,
-  editVideo
+  editVideo,
+  dispatch
 }) {
   return (
     <>
       <div className='video-card'>
-      <button className='edit' onClick={()=>editVideo(id)}>edit</button>
-        <button className='close-btn' onClick={()=>deleteVideo(id)}>X</button>
+        <button className='edit' onClick={() => editVideo(id)}>
+          edit
+        </button>
+        <button
+          className='close-btn'
+          onClick={() => dispatch({ type: 'DELETE', payload: id })}
+        >
+          X
+        </button>
         <div className='thumnail-img'>
           <img
             src={`https://picsum.photos/id/${id}/300/150`}
