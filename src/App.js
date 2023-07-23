@@ -1,13 +1,19 @@
 import './App.css'
 import videoData from './data/videoData';
-import { useReducer, useState } from 'react';
+import { useContext, useReducer, useState } from 'react';
 import AddVideo from './components/AddVideo';
 import VideoList from './components/VideoList';
+import ThemeContext from './components/context/ThemeContext';
+
 
 
 function App(){
 
   const [editableVideo, setEditableVideo] = useState(null);
+
+  const themeContext = useContext(ThemeContext);
+
+
 
   function videoReducer(videoCard, action) {
     switch (action.type){
@@ -31,15 +37,11 @@ function App(){
 
   const [videoCard,dispatch] = useReducer(videoReducer, videoData);
 
-  // const [videoCard, setVideoCard] = useState(videoData);
-
-  // const [editableVideo,setEditableVideo] = useState(null)
-
-
 
 function editVideo(id) {
   setEditableVideo(videoCard.find((video) => video.id === id));
 }
+
 
 
   return (
@@ -47,7 +49,7 @@ function editVideo(id) {
       <div className='input-field'>
         <AddVideo dispatch={dispatch} editVideos={editableVideo} />
       </div>
-      <div className='App'>
+      <div className={`App ${themeContext}`}>
         <VideoList
           videos={videoCard}
           dispatch={dispatch}
