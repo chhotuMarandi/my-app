@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import ThemeContext from "./context/ThemeContext";
 
 function AddVideo({ dispatch, editVideos }) {
+
+const theme = useContext(ThemeContext)
+
   const initialData = {
     channel: 'Coding addict',
     time: '3 year ago',

@@ -8,3 +8,9 @@
  margin: 5px 0;
  padding: 5px;
 }
+
+.darkMode {
+ height: 100vh;
+ background-color: grey;
+ color: #fff;
+}
