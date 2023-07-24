@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import './Video.css'
+import VideoDispatchContext from './context/VideosDispatchContext';
 
 
 function Video({
@@ -10,8 +12,10 @@ function Video({
   id,
   children,
   editVideo,
-  dispatch
 }) {
+
+  const dispatch = useContext(VideoDispatchContext);
+
   return (
     <>
       <div className='video-card'>

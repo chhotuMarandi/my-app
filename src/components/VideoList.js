@@ -3,7 +3,7 @@ import PlayButton from "./PlayButton";
 import { useContext } from "react";
 import VideosContext from "./context/VideosContext";
 
-function VideoList({  dispatch, editVideo }) {
+function VideoList({  editVideo }) {
   const videos = useContext(VideosContext);
   return (
     <>
@@ -20,7 +20,6 @@ function VideoList({  dispatch, editVideo }) {
             key={video.id}
             verified={video.verified}
             editVideo={editVideo}
-            dispatch={dispatch}
           >
             <PlayButton
               onPlay={() => console.log('playing', video.title)}

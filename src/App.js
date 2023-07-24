@@ -4,6 +4,7 @@ import { useContext, useReducer, useState } from 'react';
 import AddVideo from './components/AddVideo';
 import VideoList from './components/VideoList';
 import VideosContext from './components/context/VideosContext';
+import VideosDispatchContext from './components/context/VideosDispatchContext'
 
 
 
@@ -40,21 +41,19 @@ function editVideo(id) {
   setEditableVideo(videoCard.find((video) => video.id === id));
 }
 
-console.log(VideosContext.value)
 
   return (
     <VideosContext.Provider value={videoCard}>
-      <>
-        <div className='input-field'>
-          <AddVideo dispatch={dispatch} editVideos={editableVideo} />
-        </div>
-        <div className='App'>
-          <VideoList 
-          dispatch={dispatch} 
-          // videos={videoCard} 
-          editVideo={editVideo} />
-        </div>
-      </>
+      <VideosDispatchContext.Provider value={dispatch}>
+        <>
+          <div className='input-field'>
+            <AddVideo editVideos={editableVideo} />
+          </div>
+          <div className='App'>
+            <VideoList editVideo={editVideo} />
+          </div>
+        </>
+      </VideosDispatchContext.Provider>
     </VideosContext.Provider>
   );
 }

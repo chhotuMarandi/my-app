@@ -1,8 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import ThemeContext from "./context/ThemeContext";
+import VideoDispatchContext from "./context/VideosDispatchContext";
 
-function AddVideo({ dispatch, editVideos }) {
+function AddVideo({editVideos }) {
 
+  const dispatch = useContext(VideoDispatchContext)
 const theme = useContext(ThemeContext)
 
   const initialData = {
