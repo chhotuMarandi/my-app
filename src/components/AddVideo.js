@@ -1,11 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import ThemeContext from "./context/ThemeContext";
-import VideoDispatchContext from "./context/VideosDispatchContext";
+import { useEffect, useState } from "react";
+import useVideoDispatch from "./hooks/VideoDispatchHooks";
 
 function AddVideo({editVideos }) {
 
-  const dispatch = useContext(VideoDispatchContext)
-const theme = useContext(ThemeContext)
+  const dispatch = useVideoDispatch();
 
   const initialData = {
     channel: 'Coding addict',

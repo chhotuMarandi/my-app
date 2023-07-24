@@ -14,3 +14,9 @@
  background-color: grey;
  color: #fff;
 }
+
+.darkMode {
+ height: 100vh;
+ background-color: grey;
+ color: #fff;
+}

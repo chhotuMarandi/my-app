@@ -1,10 +1,11 @@
 import Video from "./Video";
 import PlayButton from "./PlayButton";
-import { useContext } from "react";
-import VideosContext from "./context/VideosContext";
+import useVideo from "./hooks/VideoHooks";
 
 function VideoList({  editVideo }) {
-  const videos = useContext(VideosContext);
+  
+  const videos = useVideo();
+
   return (
     <>
       {videos.map((video) => {

@@ -1,6 +1,6 @@
 import './App.css'
 import videoData from './data/videoData';
-import { useContext, useReducer, useState } from 'react';
+import { useReducer, useState } from 'react';
 import AddVideo from './components/AddVideo';
 import VideoList from './components/VideoList';
 import VideosContext from './components/context/VideosContext';
